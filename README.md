@@ -11,6 +11,13 @@ Wuff is a gradle plugin for developing and assembling OSGi/Eclipse applications 
 
 #### What's new :star:
 
+### Version 0.0.21 (unofficial release)
+
+ - added Eclipse Mars 2 SDK (4.5.2) as default configuration
+ - fixed an extension point generation issue for user classes starting with `View`, e.g., `ViewSomething.java`.
+ - added `skipRequireBundle` and `skipImportPackage` wuff configurations. Use these 2 to exclude certain entries from the generated `MANIFEST.MF` file.
+ 
+
 ### Version 0.0.20
 
 - introduced publicLib configuration for eclipse bundles and applications.
