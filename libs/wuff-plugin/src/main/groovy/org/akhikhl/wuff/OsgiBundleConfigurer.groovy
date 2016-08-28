@@ -223,7 +223,7 @@ class OsgiBundleConfigurer extends JavaConfigurer {
               }
               if (!project.wuff.skipImportPackage.isEmpty()) {
                 Map packages = ManifestUtils.parsePackages(newValue)
-                ManifestUtils.parsePackages(newValue).each { 
+                ManifestUtils.parsePackages(newValue).each {
                   project.wuff.skipImportPackage.each { skipped ->
                     if (it && it.key.startsWith(skipped)) {
                       packages.remove(it.key)
@@ -369,23 +369,23 @@ class OsgiBundleConfigurer extends JavaConfigurer {
     super.createConfigurations()
     if(!project.configurations.findByName('publicLib')) {
       Configuration configuration = project.configurations.create('publicLib')
-      project.sourceSets.each { it.compileClasspath += [configuration] }
+      project.sourceSets.each { it.compileClasspath += configuration }
 
       if (project.plugins.hasPlugin('idea'))
-        project.idea.module.scopes.COMPILE.plus += [configuration]
+        project.idea.module.scopes.COMPILE.plus += configuration
 
       if (project.plugins.hasPlugin('eclipse'))
-        project.eclipse.classpath.plusConfigurations += [configuration]
+        project.eclipse.classpath.plusConfigurations += configuration
     }
     if(!project.configurations.findByName('privateLib')) {
       Configuration configuration = project.configurations.create('privateLib')
-      project.sourceSets.each { it.compileClasspath += [configuration] }
+      project.sourceSets.each { it.compileClasspath += configuration }
 
       if (project.plugins.hasPlugin('idea'))
-        project.idea.module.scopes.COMPILE.plus += [configuration]
+        project.idea.module.scopes.COMPILE.plus += configuration
 
       if (project.plugins.hasPlugin('eclipse'))
-        project.eclipse.classpath.plusConfigurations += [configuration]
+        project.eclipse.classpath.plusConfigurations += configuration
     }
   }
 
