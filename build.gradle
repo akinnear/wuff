@@ -26,13 +26,13 @@ if( !hasProperty( 'bintrayUser' ) )
 if( !hasProperty( 'bintrayKey' ) )
   ext.bintrayKey = ''
 
-task('build')
+task('custombuild')
 
 // we exclude buildExamples from main build,
 // because building all examples might be too slow
 task('buildExamples', type: GradleBuild) {
   dir = file('examples')
-  tasks = [ 'build' ]
+  tasks = [ 'custombuild' ]
 }
 
 // we exclude cleanExamples from main build,
