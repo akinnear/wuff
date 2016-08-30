@@ -124,7 +124,7 @@ class OsgiBundleConfigurer extends JavaConfigurer {
         // i.e. when the project contains no java/groovy classes (resources-only project)
         project.sourceSets.main.output.classesDir.mkdirs()
         generatedManifestFile.parentFile.mkdirs()
-        generatedManifestFile.withWriter { createManifest().writeTo it }
+        generatedManifestFile.withOutputStream { createManifest().writeTo it }
       }
     }
   } // configureTask_createOsgiManifest
