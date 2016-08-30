@@ -11,12 +11,19 @@ Wuff is a gradle plugin for developing and assembling OSGi/Eclipse applications 
 
 #### What's new :star:
 
+### Version 0.0.22 (unofficial release)
+
+Includes fixes relevant to Gradle 3.0.
+
+ - fixed `GroovyRuntimeException` - `Cannot cast object '[configuration]' with class 'java.util.ArrayList' to class 'org.gradle.api.file.FileCollection'`
+ - fixed `Manifest.writeTo(Writer) has been deprecated` warning
+ - upgraded Groovy and Spock to `2.4.7`
+
 ### Version 0.0.21 (unofficial release)
 
  - added Eclipse Mars 2 SDK (4.5.2) as default configuration
  - fixed an extension point generation issue for user classes starting with `View`, e.g., `ViewSomething.java`.
  - added `skipRequireBundle` and `skipImportPackage` wuff configurations. Use these 2 to exclude certain entries from the generated `MANIFEST.MF` file.
- 
 
 ### Version 0.0.20
 
@@ -36,7 +43,7 @@ Wuff is a gradle plugin for developing and assembling OSGi/Eclipse applications 
 
 - If you are new to Wuff, start your acquaintance with [main features](../../wiki/Main-features).
 
-- If you want to create something from scratch quickly, take a look at the tutorials: 
+- If you want to create something from scratch quickly, take a look at the tutorials:
 [first Equinox app](../../wiki/Create-first-Equinox-app), [first RCP app](../../wiki/Create-first-RCP-app) and [first IDE app](../../wiki/Create-first-IDE-app).
 
 - If you already have bunch of existing Eclipse plugins and apps, consider [converting them to Gradle/Wuff](../../wiki/Convert-existing-Eclipse-plugins-and-apps-to-Gradle).
