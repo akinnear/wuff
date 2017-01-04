@@ -11,13 +11,18 @@ Wuff is a gradle plugin for developing and assembling OSGi/Eclipse applications 
 
 #### What's new :star:
 
+### Version 0.0.23 (unofficial release)
+
+ - added Eclipse Neon 2 SDK (4.6.2) as default configuration
+ - reverted Groovy and Spock to `2.3`
+
 ### Version 0.0.22 (unofficial release)
 
 Includes fixes relevant to Gradle 3.0.
 
  - fixed `GroovyRuntimeException` - `Cannot cast object '[configuration]' with class 'java.util.ArrayList' to class 'org.gradle.api.file.FileCollection'`
  - fixed `Manifest.writeTo(Writer) has been deprecated` warning
- - upgraded Groovy and Spock to `2.4.7`
+ - upgraded Groovy and Spock to `2.4`
 
 ### Version 0.0.21 (unofficial release)
 
