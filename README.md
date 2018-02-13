@@ -13,7 +13,8 @@ Wuff is a gradle plugin for developing and assembling OSGi/Eclipse applications 
 
 ### Version 0.0.24 (unofficial release)
 
- - Fixes 'No value has been specified for property pluginCustomization' warning.
+ - fixed 'No value has been specified for property pluginCustomization' warning.
+ - added Eclipse Oxygen 2 SDK (4.7.2) as default configuration
 
 ### Version 0.0.23 (unofficial release)
 
