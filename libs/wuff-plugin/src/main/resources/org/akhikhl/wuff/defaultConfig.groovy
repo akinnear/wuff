@@ -4,7 +4,7 @@ wuff {
 
   localMavenRepositoryDir = new File(wuffDir, 'm2_repository')
 
-  selectedEclipseVersion = '4.6.2'
+  selectedEclipseVersion = '4.7.2'
 
   def suffix_os = [ 'linux': 'linux-gtk', 'macosx': 'macosx-cocoa', 'windows': 'win32' ]
   def suffix_arch = [ 'x86_32': '', 'x86_64': '-x86_64' ]
@@ -469,6 +469,27 @@ wuff {
       source "${eclipseMirror}/eclipse/eclipse/downloads/drops4/R-4.6.2-201611241400/eclipse-SDK-4.6.2-${suffix_os[current_os]}${suffix_arch[current_arch]}.${fileExt_os[current_os]}", sourcesOnly: true
 
       languagePackTemplate '${eclipseMirror}/eclipse//technology/babel/babel_language_packs/R0.14.1/mars/BabelLanguagePack-eclipse-${language}_4.6.0.v20161126060001.zip'
+    }
+  }
+
+  eclipseVersion('4.7.2') {
+
+    // new Eclipse packging makes it impossible to use the .dmg file, at least not easily!
+    suffix_os['macosx'] = 'linux-gtk'
+    fileExt_os['macosx'] = 'tar.gz'
+
+    eclipseMavenGroup = 'eclipse-oxygen-sr2'
+
+    eclipseMirror = 'http://ftp.fau.de'
+    eclipseArchiveMirror = 'http://ftp.fau.de'
+
+    sources {
+
+      //source "${eclipseMirror}/eclipse/technology/epp/downloads/release/oxygen/2/eclipse-jee-oxygen-2-linux-gtk-x86_64.tar.gz"
+      source "${eclipseMirror}/eclipse/technology/epp/downloads/release/oxygen/2/eclipse-jee-oxygen-2-${suffix_os[current_os]}${suffix_arch[current_arch]}.${fileExt_os[current_os]}"
+      source "${eclipseMirror}/eclipse/eclipse/downloads/drops4/R-4.7.2-201711300510/eclipse-SDK-4.7.2-${suffix_os[current_os]}${suffix_arch[current_arch]}.${fileExt_os[current_os]}", sourcesOnly: true
+
+      languagePackTemplate '${eclipseMirror}/eclipse/technology/babel/babel_language_packs/R0.15.1/oxygen/BabelLanguagePack-eclipse-${language}_4.7.0.v20171231020002.zip'
     }
   }
 
