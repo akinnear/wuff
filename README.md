@@ -11,6 +11,10 @@ Wuff is a gradle plugin for developing and assembling OSGi/Eclipse applications 
 
 #### What's new :star:
 
+### Version 0.0.24 (unofficial release)
+
+ - Fixes 'No value has been specified for property pluginCustomization' warning.
+
 ### Version 0.0.23 (unofficial release)
 
  - added Eclipse Neon 2 SDK (4.6.2) as default configuration
