@@ -534,7 +534,10 @@ class OsgiBundleConfigurer extends JavaConfigurer {
   protected Map getExtraFilesProperties() {
     Map result = [:]
     result.pluginXml = getPluginXmlString()
-    result.pluginCustomization = getPluginCustomizationString()
+    String pc = getPluginCustomizationString();
+    if (pc != null) {
+      result.pluginCustomization = pc;
+    }
     return result
   }
 
