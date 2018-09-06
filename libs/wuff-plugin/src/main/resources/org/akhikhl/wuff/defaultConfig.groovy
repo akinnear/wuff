@@ -4,7 +4,7 @@ wuff {
 
   localMavenRepositoryDir = new File(wuffDir, 'm2_repository')
 
-  selectedEclipseVersion = '4.7.2'
+  selectedEclipseVersion = '4.8.0'
 
   def suffix_os = [ 'linux': 'linux-gtk', 'macosx': 'macosx-cocoa', 'windows': 'win32' ]
   def suffix_arch = [ 'x86_32': '', 'x86_64': '-x86_64' ]
@@ -492,6 +492,26 @@ wuff {
       languagePackTemplate '${eclipseMirror}/eclipse/technology/babel/babel_language_packs/R0.15.1/oxygen/BabelLanguagePack-eclipse-${language}_4.7.0.v20171231020002.zip'
     }
   }
+
+    eclipseVersion('4.8.0') {
+
+      // new Eclipse packging makes it impossible to use the .dmg file, at least not easily!
+      suffix_os['macosx'] = 'linux-gtk'
+      fileExt_os['macosx'] = 'tar.gz'
+
+      eclipseMavenGroup = 'eclipse-photon'
+
+      def eclipseMirror = 'http://ftp.fau.de'
+      def eclipseArchiveMirror = 'http://ftp.fau.de'
+
+      sources {
+
+          source "${eclipseMirror}/eclipse/technology/epp/downloads/release/photon/R/eclipse-jee-photon-R-${suffix_os[current_os]}${suffix_arch[current_arch]}.${fileExt_os[current_os]}"
+          source "${eclipseMirror}/eclipse/eclipse/downloads/drops4/R-4.8-201806110500/eclipse-SDK-4.8-${suffix_os[current_os]}${suffix_arch[current_arch]}.${fileExt_os[current_os]}", sourcesOnly: true
+
+          languagePackTemplate '${eclipseMirror}/eclipse/technology/babel/babel_language_packs/R0.16.0/photon/BabelLanguagePack-eclipse-${language}_4.8.0.v20180815020001.zip'
+      }
+    }
 
   eclipseVersion('efxclipse-1.2') {
       eclipseMavenGroup = 'efxclipse-1_2'

@@ -11,6 +11,10 @@ Wuff is a gradle plugin for developing and assembling OSGi/Eclipse applications 
 
 #### What's new :star:
 
+### Version 0.0.25 (unofficial release)
+
+ - added Eclipse Photon SDK (4.8.0) as default configuration
+
 ### Version 0.0.24 (unofficial release)
 
  - fixed 'No value has been specified for property pluginCustomization' warning.
