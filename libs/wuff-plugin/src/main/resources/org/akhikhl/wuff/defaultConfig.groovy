@@ -458,6 +458,8 @@ wuff {
 
   eclipseVersion('4.6.2') {
 
+    extendsFrom '4.5.2'
+
     eclipseMavenGroup = 'eclipse-neon-sr2'
 
     eclipseMirror = 'http://ftp.fau.de'
@@ -473,6 +475,8 @@ wuff {
   }
 
   eclipseVersion('4.7.2') {
+
+    extendsFrom '4.6.2'
 
     // new Eclipse packging makes it impossible to use the .dmg file, at least not easily!
     suffix_os['macosx'] = 'linux-gtk'
@@ -494,6 +498,8 @@ wuff {
   }
 
     eclipseVersion('4.8.0') {
+
+      extendsFrom '4.7.2'
 
       // new Eclipse packging makes it impossible to use the .dmg file, at least not easily!
       suffix_os['macosx'] = 'linux-gtk'
